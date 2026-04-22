@@ -16,8 +16,13 @@ def is_passing(score):
     return score >= 60
 
 def average(scores):
-    return True
-
+    if not isinstance(scores, list):
+        raise TypeError("scores must be a list")
+    if len(scores) == 0:
+        raise ValueEror("scores list cannot be empty")
+    if not all(isinstance(s, (int, float))for s in scores):
+        raise TypeError("all scores must be numbers")
+    return round(sum(scores) / len(scores), 2)
 def curved_score(score, bonus):
     pass
 
