@@ -15,4 +15,13 @@ def test_letter-grade_invalid_type(score):
     #with pytest.raises(TypeError):
         #letter_grade("hello")
 
-def test_
+def test_average_works():
+    assert average([80,90,70]) == 80.0
+
+def test_average_empty_list():
+    with pytest.raises(ValueError):
+        average([not a list])
+
+def test_average_bad_items():
+    with pytest.raises(TypeError):
+        average([80, "ninety, 70"])
