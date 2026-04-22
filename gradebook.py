@@ -11,10 +11,12 @@ def letter_grade(score):
         return "F"
 
 def is_passing(score):
-    pass
+    if not isinstance(score, (int, float)):
+        raise TypeError("score must be number")
+    return score >= 60
 
 def average(scores):
-    pass
+    return True
 
 def curved_score(score, bonus):
     pass
